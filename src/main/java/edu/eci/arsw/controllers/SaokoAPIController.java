@@ -20,7 +20,6 @@ public class SaokoAPIController {
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         try {
-            System.out.println(user.getFirstName());
             saokoService.registerUser(user);
             return new ResponseEntity<>(HttpStatus.CREATED);
         }catch (Exception e) {

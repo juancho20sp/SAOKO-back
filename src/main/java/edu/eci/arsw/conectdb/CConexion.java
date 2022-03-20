@@ -16,7 +16,7 @@ public class CConexion {
     public Connection conecDB() {
         try {
             connection = DriverManager.getConnection("jdbc:postgresql://"+ host +":5432/"+ db, user, password);
-            System.out.println("Se conecto correctamente a l base de datos");
+            System.out.println("Se conecto correctamente a la base de datos");
 
         }catch (Exception e) {
             System.out.println("Error al conectar a la base de datos, error: "+ e);

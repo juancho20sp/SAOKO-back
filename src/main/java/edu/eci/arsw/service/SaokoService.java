@@ -12,7 +12,6 @@ public class SaokoService {
     SaokoPersistence ss=null;
 
     public void registerUser(User user) {
-        System.out.println("saokoservice");
         ss.registerUser(user);
     }
 }

@@ -1,0 +1,1 @@
+INSERT INTO DB_USER (firstName, lastName, email, role) VALUES ('ernesto', 'perez', 'frailejon@gmail.com', 'user');
