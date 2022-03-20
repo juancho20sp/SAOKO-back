@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/saoko")
+@RequestMapping(value = "/api/v1")
 public class SaokoAPIController {
 
     @Autowired
@@ -21,7 +21,7 @@ public class SaokoAPIController {
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         try {
             saokoService.registerUser(user);
-            return new ResponseEntity<>(HttpStatus.CREATED);
+            return new ResponseEntity<>(HttpStatus.OK);
         }catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
