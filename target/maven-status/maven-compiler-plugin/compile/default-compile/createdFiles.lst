@@ -1,0 +1,4 @@
+edu\eci\arsw\conectdb\CConexion.class
+edu\eci\arsw\service\SaokoService.class
+edu\eci\arsw\controllers\SaokoAPIController.class
+edu\eci\arsw\SaokoAPIApplication.class
