@@ -21,7 +21,7 @@ public class ImplSaokoPersistence implements SaokoPersistence {
 
         try {
             java.sql.Statement  date = connection.createStatement();
-            String sql = "INSERT INTO DB_USER (firstName, lastName, email, role) VALUES ('"+ user.getFirstName() + "','" + user.getLastName() + "','" + user.getEmail() + "','" + user.getRole().toUpperCase() +"');";
+            String sql = "INSERT INTO DB_USER (firstName, lastName, email, cell, role) VALUES ('"+ user.getFirstName() + "','" + user.getLastName() + "','" + user.getEmail() + "','" + user.getCell() + "','" + user.getRole().toUpperCase() +"');";
             date.execute(sql);
             date.close();
             System.out.println("Se añadio el usuario de forma correcta");

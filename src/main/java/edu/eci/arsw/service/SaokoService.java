@@ -14,4 +14,8 @@ public class SaokoService {
     public void registerUser(User user) {
         ss.registerUser(user);
     }
+
+    /*public void registrarSala(Sala sala) {
+
+    }*/
 }
