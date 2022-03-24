@@ -6,6 +6,8 @@ import edu.eci.arsw.persistence.SaokoPersistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class SaokoService {
 
@@ -19,5 +21,5 @@ public class SaokoService {
 
     public void addTask(Task task) {ss.addTask(task);}
 
-    public void getTask() {ss.getTasks(000);}
+    public ArrayList<ArrayList<Task>> getTask(Integer idRoom) {return ss.getTasks(idRoom);}
 }

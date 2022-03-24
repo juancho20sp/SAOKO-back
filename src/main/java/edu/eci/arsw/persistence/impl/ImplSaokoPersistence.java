@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Locale;
 
 @Service
@@ -41,7 +42,7 @@ public class ImplSaokoPersistence implements SaokoPersistence {
 
         try {
             java.sql.Statement  date = connection.createStatement();
-            String sql = "INSERT INTO DB_TASK (taskName, status) VALUES ('"+ task.getTaskName() + "', 'NEW ');";
+            String sql = "INSERT INTO DB_TASK (taskName, status) VALUES ('"+ task.getTaskName() + "', 'TO DO');";
             date.execute(sql);
             date.close();
             System.out.println("Se añadio la tarea");
@@ -52,27 +53,47 @@ public class ImplSaokoPersistence implements SaokoPersistence {
     }
 
     @Override
-    public void getTasks(Integer roomId) {
+    public ArrayList<ArrayList<Task>> getTasks(Integer roomId) {
+        String [] taskStatus = new String [] {"TO DO", "IN PROGRESS", "DONE"};
         System.out.println("saokoPersistence.gettask");
         generateConnection();
 
         try {
-            java.sql.Statement  date = connection.createStatement();
-            ResultSet rs = date.executeQuery("SELECT * FROM DB_TASK;");
-            System.out.println(rs);
-            while (rs.next()) {
-                String lastName = rs.getString("Lname");
-                System.out.println(lastName + "\n");
-            }
+            ArrayList<ArrayList<Task>> finalList = new ArrayList<>();
+            for(int i = 0; i <= 2; i++){
+                System.out.println(taskStatus[i]);
+                java.sql.Statement  date = connection.createStatement();
+                ResultSet rs = date.executeQuery("SELECT * FROM DB_TASK WHERE status = '" + taskStatus[i]+ "';");
+                ArrayList<Task> tasks = new ArrayList<>();
+                while (rs.next()) {
+                    int taskId = rs.getInt("taskid");
+                    String taskName = rs.getString("taskname");
+                    String status = rs.getString("status");
 
-            //date.execute(sql);
-            date.close();
-            //System.out.println("Se añadio la tarea");
+                    System.out.println("ID: " + taskId + "\n" +
+                            "Name: " + taskName + "\n" +
+                            "Status: " + status + "\n");
+
+                    tasks.add(new Task(taskId, taskName, status));
+                }
+
+                finalList.add(tasks);
+
+                date.close();
+
+            }
+            return finalList;
+
+
         } catch (SQLException e) {
             System.out.println("No se logro añadir la tarea: "+ e);
         }
         disconnectConnection();
+
+        return null;
     }
+
+
 
 
 
