@@ -1,5 +1,13 @@
 edu\eci\arsw\conectdb\CConexion.class
 edu\eci\arsw\model\Task.class
-edu\eci\arsw\service\SaokoService.class
-edu\eci\arsw\controllers\SaokoAPIController.class
+edu\eci\arsw\service\impl\ImplUserService.class
+edu\eci\arsw\persistence\impl\ImplUserPersistence.class
+edu\eci\arsw\controllers\TaskAPIController.class
+edu\eci\arsw\controllers\UserAPIController.class
 edu\eci\arsw\SaokoAPIApplication.class
+edu\eci\arsw\service\TaskService.class
+edu\eci\arsw\service\UserService.class
+edu\eci\arsw\persistence\TaskPersistence.class
+edu\eci\arsw\persistence\impl\ImplTaskPersistence.class
+edu\eci\arsw\persistence\UserPersistence.class
+edu\eci\arsw\service\impl\ImplTaskService.class
