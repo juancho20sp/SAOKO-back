@@ -1,16 +1,17 @@
 package edu.eci.arsw.persistence.impl;
 
 import edu.eci.arsw.conectdb.CConexion;
+import edu.eci.arsw.model.Task;
 import edu.eci.arsw.model.User;
-import edu.eci.arsw.persistence.SaokoPersistence;
 import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Locale;
+import java.util.ArrayList;
 
 @Service
-public class ImplSaokoPersistence implements SaokoPersistence {
+public class ImplUserPersistence implements edu.eci.arsw.persistence.UserPersistence {
 
     private CConexion cConexion = new CConexion();
     private Connection connection = null;
