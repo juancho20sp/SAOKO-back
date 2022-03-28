@@ -45,7 +45,7 @@ public class ImplTaskPersistence implements TaskPersistence {
             for(int i = 0; i <= 2; i++){
                 System.out.println(taskStatus[i]);
                 java.sql.Statement  date = connection.createStatement();
-                ResultSet rs = date.executeQuery("SELECT * FROM DB_TASK WHERE status = '" + taskStatus[i]+ "';");
+                ResultSet rs = date.executeQuery("SELECT * FROM DB_TASK WHERE status = '" + taskStatus[i]+ "' AND roomId =" + roomId + " ;");
                 ArrayList<Task> tasks = new ArrayList<>();
                 while (rs.next()) {
                     int taskId = rs.getInt("taskid");
@@ -73,6 +73,24 @@ public class ImplTaskPersistence implements TaskPersistence {
         disconnectConnection();
 
         return null;
+    }
+
+    @Override
+    public void deleteTask(Integer taskId) {
+        System.out.println("saokoPersistence.deleteTask");
+        generateConnection();
+
+        try {
+            java.sql.Statement  date = connection.createStatement();
+            String sql = "DELETE FROM DB_TASK WHERE taskId =" + taskId + ";";
+            date.execute(sql);
+            date.close();
+            System.out.println("Se eliminó la tarea");
+        } catch (SQLException e) {
+            System.out.println("No se logro eliminar la tarea: "+ e);
+        }
+        disconnectConnection();
+
     }
 
     private void generateConnection() {
