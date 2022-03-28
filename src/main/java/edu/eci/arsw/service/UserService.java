@@ -7,4 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 public interface UserService {
 
     public void registerUser(User user);
+
+    public User consultUser(String email);
 }

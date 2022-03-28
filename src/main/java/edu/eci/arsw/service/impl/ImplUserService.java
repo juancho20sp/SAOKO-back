@@ -14,4 +14,6 @@ public class ImplUserService implements UserService {
     public void registerUser(User user) {
         userp.registerUser(user);
     }
+
+    public User consultUser(String email) {return userp.consultUser(email); }
 }
