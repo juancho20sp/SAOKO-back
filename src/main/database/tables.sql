@@ -43,4 +43,13 @@ CHECK(
     type IN ('CHAT', 'TASK')
 );
 
+-- -----------------------------------------------------
+-- Table `DB_PASSWORD`
+-- -----------------------------------------------------
+CREATE TABLE DB_PASSWORD(
+passId      SERIAL          PRIMARY KEY,
+password    VARCHAR(500)    NOT NULL,
+userId      INTEGER         NOT NULL
+);
+
 
