@@ -1,4 +1,5 @@
--- -----------------------------------------------------
--- DROP TABLES
--- -----------------------------------------------------
+
 DROP TABLE DB_USER;
+DROP TABLE DB_ROOM;
+DROP TABLE DB_TASK;
+DROP TABLE DB_CHAT;

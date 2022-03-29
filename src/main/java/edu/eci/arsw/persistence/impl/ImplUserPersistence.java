@@ -22,7 +22,7 @@ public class ImplUserPersistence implements edu.eci.arsw.persistence.UserPersist
 
         try {
             java.sql.Statement  date = connection.createStatement();
-            String sql = "INSERT INTO DB_USER (firstName, lastName, email, role) VALUES ('"+ user.getFirstName() + "','" + user.getLastName() + "','" + user.getEmail() + "','" + user.getRole().toUpperCase() +"');";
+            String sql = "INSERT INTO DB_USER (firstName, lastName, email, cell, role) VALUES ('"+ user.getFirstName() + "','" + user.getLastName() + "','" + user.getEmail() + "','" + user.getCell() + "','" + user.getRole().toUpperCase() +"');";
             date.execute(sql);
             date.close();
             System.out.println("Se añadio el usuario de forma correcta");
@@ -31,6 +31,32 @@ public class ImplUserPersistence implements edu.eci.arsw.persistence.UserPersist
         }
 
         disconnectConnection();
+    }
+
+    @Override
+    public User consultUser(String email) {
+        generateConnection();
+        User user = new User();
+        try{
+            java.sql.Statement  date = connection.createStatement();
+            String sql = "SELECT * FROM DB_USER WHERE email LIKE '"+email+"%';";
+            System.out.println(email);
+            java.sql.ResultSet res = date.executeQuery(sql);
+
+            if(res.next()) {
+                user.setUserId(res.getInt("userid"));
+                user.setFirstName(res.getString("firstname"));
+                user.setLastName(res.getString("lastname"));
+                user.setEmail(res.getString("email"));
+                user.setCell(res.getLong("cell"));
+                user.setRole(res.getString("role"));
+            }
+        } catch(Exception e) {
+            System.out.println("No se logro consultar el usuario: "+ e);
+        }
+
+        disconnectConnection();
+        return user;
     }
 
     private void generateConnection() {

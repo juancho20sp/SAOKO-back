@@ -9,5 +9,5 @@ public interface UserPersistence {
 
     public void registerUser(User user);
 
-
+    public User consultUser(String email);
 }
