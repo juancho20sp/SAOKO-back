@@ -42,3 +42,13 @@ CREATE TABLE DB_ROOM(
 );
 
 ALTER TABLE DB_ROOM ADD CONSTRAINT FK_ROOM_USER FOREIGN KEY (userId) REFERENCES DB_USER(userId);
+
+
+-- -----------------------------------------------------
+-- Table `DB_CHAT`
+-- -----------------------------------------------------
+CREATE TABLE DB_TASK(
+    chatId      SERIAL          PRIMARY KEY,
+    message     VARCHAR(140)    NOT NULL,
+    roomId      INTEGER         NOT NULL,
+);
