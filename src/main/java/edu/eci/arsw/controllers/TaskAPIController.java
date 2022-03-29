@@ -28,11 +28,21 @@ public class TaskAPIController {
         }
     }
 
-    @RequestMapping(value = "/{idRoom}",method = RequestMethod.GET)
-    public ResponseEntity<?> getTask(@PathVariable("idRoom") Integer idRoom){
+    @RequestMapping(value = "/{roomId}",method = RequestMethod.GET)
+    public ResponseEntity<?> getTask(@PathVariable("roomId") Integer roomId){
         try {
-            ArrayList<ArrayList<Task>> tasks = taskService.getTask(idRoom);
-            return new ResponseEntity<>(tasks, HttpStatus.OK);
+            ArrayList<ArrayList<Task>> tasks = taskService.getTask(roomId);
+                return new ResponseEntity<>(tasks, HttpStatus.OK);
+        }catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
+    }
+
+    @RequestMapping(value = "/{taskId}",method = RequestMethod.DELETE)
+    public ResponseEntity<?> deleteTask(@PathVariable("taskId") Integer taskId){
+        try {
+            taskService.deleteTask(taskId);
+            return new ResponseEntity<>(HttpStatus.OK);
         }catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }

@@ -9,4 +9,6 @@ public interface TaskPersistence {
 
     public ArrayList<ArrayList<Task>> getTasks(Integer roomId);
 
+    public void deleteTask(Integer taskId);
+
 }

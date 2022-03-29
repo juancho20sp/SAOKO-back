@@ -9,4 +9,6 @@ public interface TaskService {
     public void addTask(Task task);
 
     public ArrayList<ArrayList<Task>> getTask(Integer roomId) ;
+
+    public void deleteTask(Integer taskId);
 }

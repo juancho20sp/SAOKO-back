@@ -18,4 +18,7 @@ public class ImplTaskService implements TaskService {
 
     @Override
     public ArrayList<ArrayList<Task>> getTask(Integer roomId) {return taskp.getTasks(roomId);}
+
+    @Override
+    public void deleteTask(Integer taskId) { taskp.deleteTask(taskId);}
 }
