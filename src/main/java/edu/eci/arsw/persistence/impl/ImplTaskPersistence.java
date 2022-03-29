@@ -68,7 +68,7 @@ public class ImplTaskPersistence implements TaskPersistence {
 
 
         } catch (SQLException e) {
-            System.out.println("No se logro añadir la tarea: "+ e);
+            System.out.println("No se encuentran tareas: "+ e);
         }
         disconnectConnection();
 

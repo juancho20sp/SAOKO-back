@@ -33,8 +33,9 @@ CHECK(
 CREATE TABLE DB_ROOM(
     roomId      SERIAL      PRIMARY KEY,
     roomName    VARCHAR(75) NOT NULL,
-    type        VARCHAR(75) NOT NULL,
-    userId      INTEGER     NOT NULL
+    roomType        VARCHAR(75) NOT NULL,
+    userId      INTEGER     NOT NULL,
+    roomCode    VARCHAR(10) NOT NULL
 );
 
 ALTER TABLE DB_ROOM
@@ -44,12 +45,22 @@ CHECK(
 );
 
 -- -----------------------------------------------------
+
 -- Table `DB_PASSWORD`
 -- -----------------------------------------------------
 CREATE TABLE DB_PASSWORD(
 passId      SERIAL          PRIMARY KEY,
 password    VARCHAR(500)    NOT NULL,
 userId      INTEGER         NOT NULL
+);
+
+
+-- Table `DB_CHAT`
+-- -----------------------------------------------------
+CREATE TABLE DB_CHAT(
+    chatId      SERIAL          PRIMARY KEY,
+    message     VARCHAR(140)    NOT NULL,
+    roomId      INTEGER         NOT NULL,
 );
 
 
