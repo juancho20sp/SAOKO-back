@@ -5,7 +5,10 @@ import edu.eci.arsw.model.Room;
 import java.util.ArrayList;
 
 public interface RoomPersistence {
-    public void addRoom(Room room);
+    // $ -> BEFORE
+    // public void addRoom(Room room);
+    // $ -> AFTER
+    public Room addRoom(Room room);
 
     public ArrayList<Room> getRoomByType(String type, Integer userId);
 

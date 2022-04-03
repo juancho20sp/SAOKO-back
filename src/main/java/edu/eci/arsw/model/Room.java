@@ -3,9 +3,9 @@ package edu.eci.arsw.model;
 public class Room {
     private Integer roomID;
     private String roomName;
-    private String roomType;
+    private String roomType; // CHAT | TASK
     private Integer userId;
-    private Integer roomCode;
+    private Integer roomCode; // $ -> pasar a string
 
 
     public Room(){}

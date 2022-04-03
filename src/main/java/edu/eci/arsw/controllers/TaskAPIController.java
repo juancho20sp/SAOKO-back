@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/api/v1/task")
 public class TaskAPIController {

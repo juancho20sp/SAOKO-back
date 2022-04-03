@@ -13,6 +13,18 @@ import org.springframework.web.bind.annotation.*;
 
 import static org.apache.coyote.http11.Constants.a;
 
+/**
+ *   COSAS POR HACER:
+ *      - Cambiar "cell" por "cellphone" en la respuesta de '/login'
+ *      - NO devolver el 'password' en la respuesta del login
+ *      - Verificar por que el usuario tiene rol "SAOKO" en lugar de "USER" o "ADMIN"
+ *          - El ROLE se debe asignar automáticamente en el back y por defecto debe ser "USER"
+ *      - Retornar un mensaje con STATUS = 200 que diga que el usuario fue creado exitosamente
+ *      
+ */
+
+
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/api/v1/user")
 public class UserAPIController {
@@ -23,8 +35,15 @@ public class UserAPIController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         try {
-            userService.registerUser(user);
-            return new ResponseEntity<>(HttpStatus.OK);
+            // $
+            // BEFORE
+            // userService.registerUser(user);
+            // return new ResponseEntity<>(HttpStatus.OK);
+
+            // $
+            // AFTER
+            User myUser = userService.registerUser(user);
+            return new ResponseEntity<>(myUser, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
@@ -33,7 +52,11 @@ public class UserAPIController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<?> loginUser(@RequestBody User user) {
         try {
-            return new ResponseEntity<>(new Gson().toJson(json(userService.loginUser(user))), HttpStatus.ACCEPTED);
+            // $
+            // TODO: ¿ESTO PARA QUE ES?
+            // return new ResponseEntity<>(new Gson().toJson(json(userService.loginUser(user))), HttpStatus.ACCEPTED);
+
+            return new ResponseEntity<>(userService.loginUser(user), HttpStatus.ACCEPTED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         } catch (ExceptionLoginEmailPassword e) {
