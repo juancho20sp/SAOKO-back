@@ -11,6 +11,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+/**
+ *   COSAS POR HACER:
+ *      - El código de la sala es alfanumérico, así que debemos cambiarle el tipo de dato
+ *      - DEVOLVER ALGO CUANDO SE CREA
+
+ */
+
 @CrossOrigin
 @RestController
 @RequestMapping(value = "/api/v1/room")
@@ -22,8 +29,8 @@ public class RoomAPIController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> addRoom(@RequestBody Room room) {
         try {
-            roomService.addRoom(room);
-            return new ResponseEntity<>(HttpStatus.CREATED);
+            Room myRoom = roomService.addRoom(room);
+            return new ResponseEntity<>(myRoom, HttpStatus.CREATED);
         }catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }

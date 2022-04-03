@@ -18,7 +18,8 @@ public class ImplRoomPersistence implements RoomPersistence {
     private Connection connection = null;
 
     @Override
-    public void addRoom(Room room) {
+    public Room addRoom(Room room) {
+    // public void addRoom(Room room) {
         System.out.println("roomPersistence.addRoom");
         generateConnection();
 
@@ -28,10 +29,16 @@ public class ImplRoomPersistence implements RoomPersistence {
             date.execute(sql);
             date.close();
             System.out.println("Se creo la sala");
+
+            // $ -> TENEMOS QUE HACER LA CONSULTA DE LA NUEVA SALA Y LA DEVOLVEMOS, POR AHORA RETORNO EL QUE TENEMOS PARA FACILITAR EL DESARROLLO DEL FRONT
+            return room;
         } catch (SQLException e) {
             System.out.println("No se logro añadir la sala: "+ e);
         }
+
         disconnectConnection();
+        // $ -> return temporal OJO con esto
+        return room;
     }
 
     @Override

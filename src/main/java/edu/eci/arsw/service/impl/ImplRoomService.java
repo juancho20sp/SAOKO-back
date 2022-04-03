@@ -14,8 +14,10 @@ public class ImplRoomService implements RoomService {
     @Autowired
     RoomPersistence roomp = null;
 
+    // $
     @Override
-    public void addRoom(Room room) {roomp.addRoom(room);}
+    public Room addRoom(Room room) {return roomp.addRoom(room);}
+    // public void addRoom(Room room) {roomp.addRoom(room);}
 
     @Override
     public ArrayList<Room> getRoomByType(String type, Integer userId) {return roomp.getRoomByType(type, userId);}
