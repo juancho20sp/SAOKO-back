@@ -9,7 +9,9 @@ import java.util.ArrayList;
 
 public interface UserPersistence {
 
-    public void registerUser(User user);
+    // $
+    // public void registerUser(User user);
+    public User registerUser(User user);
 
     public User loginUser(User user) throws NoSuchAlgorithmException, ExceptionLoginEmailPassword;
 }

@@ -21,8 +21,12 @@ public class ImplUserPersistence implements edu.eci.arsw.persistence.UserPersist
     private CConexion cConexion = new CConexion();
     private Connection connection = null;
 
+    // $
+    // Se cambió el tipo de retorno para que el front funcione
+    // Retornar un mensaje del tipo: {status: 200, message: 'Usuario creado correctamente'}
     @Override
-    public void registerUser(User user) {
+    public User registerUser(User user) {
+    // public void registerUser(User user) {
         generateConnection();
 
         try {
@@ -39,6 +43,11 @@ public class ImplUserPersistence implements edu.eci.arsw.persistence.UserPersist
             date.execute(sql);
             date.close();
             System.out.println("Se añadio el usuario de forma correcta");
+
+            // $
+            // CAMBIAR ESTO POR UN MENSAJE DE ÉXITO
+            return new User();
+
         } catch (SQLException e) {
             System.out.println("No se logro añadir el usuario: "+ e);
         } catch (NoSuchAlgorithmException e) {
@@ -46,6 +55,10 @@ public class ImplUserPersistence implements edu.eci.arsw.persistence.UserPersist
         }
 
         disconnectConnection();
+
+        // $
+        // Se retorna un usuario vacío para probar en el front, esto debe cambiarlo para retornar una respuesta exitosa
+        return new User();
     }
 
     @Override

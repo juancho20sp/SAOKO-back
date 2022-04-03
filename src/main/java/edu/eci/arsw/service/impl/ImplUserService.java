@@ -14,8 +14,10 @@ public class ImplUserService implements UserService {
     @Autowired
     UserPersistence userp = null;
 
-    public void registerUser(User user) {
-        userp.registerUser(user);
+    // $
+    // public void registerUser(User user) {
+    public User registerUser(User user) {
+        return userp.registerUser(user);
     }
 
     public User loginUser(User user) throws ExceptionLoginEmailPassword, NoSuchAlgorithmException {return userp.loginUser(user); }

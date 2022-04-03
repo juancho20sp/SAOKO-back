@@ -9,7 +9,9 @@ import java.security.NoSuchAlgorithmException;
 
 public interface UserService {
 
-    public void registerUser(User user);
+    // $
+    // public void registerUser(User user);
+    public User registerUser(User user);
 
     public User loginUser(User user) throws ExceptionLoginEmailPassword, NoSuchAlgorithmException;
 }
