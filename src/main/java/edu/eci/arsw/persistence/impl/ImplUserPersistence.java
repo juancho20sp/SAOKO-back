@@ -79,6 +79,8 @@ public class ImplUserPersistence implements edu.eci.arsw.persistence.UserPersist
 
             date.close();
 
+            return userN;
+
         } catch(Exception e) {
             System.out.println("No se logro consultar el usuario: "+ e);
         }
