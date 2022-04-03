@@ -18,6 +18,7 @@ import static org.apache.coyote.http11.Constants.a;
  *      - Cambiar "cell" por "cellphone" en la respuesta de '/login'
  *      - NO devolver el 'password' en la respuesta del login
  *      - Verificar por que el usuario tiene rol "SAOKO" en lugar de "USER" o "ADMIN"
+ *      
  */
 
 
