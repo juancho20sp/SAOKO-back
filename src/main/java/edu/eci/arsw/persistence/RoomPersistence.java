@@ -10,6 +10,8 @@ public interface RoomPersistence {
     // $ -> AFTER
     public Room addRoom(Room room);
 
+    public Room getRoomByCode(String roomCode);
+
     public ArrayList<Room> getRoomByType(String type, Integer userId);
 
     public void deleteRoom(Integer roomId);

@@ -5,20 +5,13 @@ public class Room {
     private String roomName;
     private String roomType; // CHAT | TASK
     private Integer userId;
-    private Integer roomCode; // $ -> pasar a string
+    private String roomCode; // $ -> pasar a string
 
 
     public Room(){}
 
-    public Room(Integer roomId, String roomName, String roomType, Integer userId){
-        this.roomID = roomId;
-        this.roomName = roomName;
-        this.roomType = roomType;
-        this.userId = userId;
-        this.roomCode = generateCode(roomName);
-    }
 
-    public Room(Integer roomId, String roomName, String roomType, Integer userId, Integer roomCode){
+    public Room(Integer roomId, String roomName, String roomType, Integer userId, String roomCode){
         this.roomID = roomId;
         this.roomName = roomName;
         this.roomType = roomType;
@@ -26,11 +19,6 @@ public class Room {
         this.roomCode = roomCode;
     }
 
-
-
-    private Integer generateCode(String roomName){
-        return roomName.hashCode() * (int)Math.random()*(1000-1+1)+1;
-    }
 
     public Integer getRoomID() {
         return roomID;
@@ -64,11 +52,11 @@ public class Room {
         this.userId = userId;
     }
 
-    public Integer getRoomCode() {
+    public String getRoomCode() {
         return roomCode;
     }
 
-    public void setRoomCode(Integer roomCode) {
+    public void setRoomCode(String roomCode) {
         this.roomCode = roomCode;
     }
 }

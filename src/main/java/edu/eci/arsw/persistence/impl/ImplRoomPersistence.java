@@ -31,14 +31,58 @@ public class ImplRoomPersistence implements RoomPersistence {
             System.out.println("Se creo la sala");
 
             // $ -> TENEMOS QUE HACER LA CONSULTA DE LA NUEVA SALA Y LA DEVOLVEMOS, POR AHORA RETORNO EL QUE TENEMOS PARA FACILITAR EL DESARROLLO DEL FRONT
-            return room;
+//            return room;
+
+            disconnectConnection();
+            return getRoomByCode(room.getRoomCode());
         } catch (SQLException e) {
             System.out.println("No se logro añadir la sala: "+ e);
         }
 
-        disconnectConnection();
+
         // $ -> return temporal OJO con esto
-        return room;
+        return null;
+    }
+
+    @Override
+    public Room getRoomByCode(String roomCode) {
+        System.out.println("roomPersistence.getRoomByCode");
+        generateConnection();
+        try {
+            Room getRoom = null;
+            java.sql.Statement  date = connection.createStatement();
+            ResultSet rs = date.executeQuery("SELECT * FROM DB_ROOM WHERE roomcode = '" + roomCode + "' ;");
+            while (rs.next()) {
+                int roomId = rs.getInt("roomId");
+                String roomName = rs.getString("roomName");
+                String roomType = rs.getString("roomType");
+                int roomUserId = rs.getInt("userId");
+//                String roomCode = rs.getString("roomCode");
+
+//                System.out.println("ID: " + roomId + "\n" +
+//                        "Name: " + roomName + "\n" +
+//                        "Type: " + roomType + "\n" +
+//                        "User ID: " + roomUserId + "\n" +
+//                        "RoomCode: " + roomCode);
+
+                getRoom = new Room(roomId, roomName, roomType, roomUserId, roomCode);
+            }
+
+            date.close();
+
+            disconnectConnection();
+
+            return getRoom;
+        } catch (SQLException e) {
+            System.out.println("No se encuentran salas: "+ e);
+        }
+
+
+        return null;
+
+
+
+
     }
 
     @Override
@@ -55,7 +99,7 @@ public class ImplRoomPersistence implements RoomPersistence {
                 String roomName = rs.getString("roomName");
                 String roomType = rs.getString("roomType");
                 int roomUserId = rs.getInt("userId");
-                int roomCode = rs.getInt("roomCode");
+                String roomCode = rs.getString("roomCode");
 
 //                System.out.println("ID: " + roomId + "\n" +
 //                        "Name: " + roomName + "\n" +
@@ -67,12 +111,13 @@ public class ImplRoomPersistence implements RoomPersistence {
             }
 
             date.close();
+            disconnectConnection();
 
             return finalList;
         } catch (SQLException e) {
             System.out.println("No se encuentran salas: "+ e);
         }
-        disconnectConnection();
+
 
         return null;
     }
@@ -87,8 +132,9 @@ public class ImplRoomPersistence implements RoomPersistence {
     }
 
     private void disconnectConnection() {
-        try {
+        try{
             connection.close();
+            System.out.println("Conexión cerrada");
         } catch (SQLException e) {
             System.out.println("Error al cerrar conexion con la db: "+e);
         }

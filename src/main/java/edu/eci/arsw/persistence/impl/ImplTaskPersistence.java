@@ -34,6 +34,9 @@ public class ImplTaskPersistence implements TaskPersistence {
         disconnectConnection();
     }
 
+
+
+
     @Override
     public ArrayList<ArrayList<Task>> getTasks(Integer roomId) {
         String [] taskStatus = new String [] {"TO DO", "IN PROGRESS", "DONE"};
@@ -64,13 +67,15 @@ public class ImplTaskPersistence implements TaskPersistence {
                 date.close();
 
             }
+
+            disconnectConnection();
             return finalList;
 
 
         } catch (SQLException e) {
             System.out.println("No se encuentran tareas: "+ e);
         }
-        disconnectConnection();
+
 
         return null;
     }
@@ -100,6 +105,7 @@ public class ImplTaskPersistence implements TaskPersistence {
     private void disconnectConnection() {
         try {
             connection.close();
+            System.out.println("Conexión cerrada");
         } catch (SQLException e) {
             System.out.println("Error al cerrar conexion con la db: "+e);
         }
