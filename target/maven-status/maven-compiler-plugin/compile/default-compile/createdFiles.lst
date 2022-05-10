@@ -11,6 +11,7 @@ edu\eci\arsw\model\Chat.class
 edu\eci\arsw\service\ChatService.class
 edu\eci\arsw\persistence\impl\ImplRoomPersistence.class
 edu\eci\arsw\service\impl\ImplRoomService.class
+edu\eci\arsw\model\User.class
 edu\eci\arsw\controllers\RoomAPIController.class
 edu\eci\arsw\service\impl\ImplChatService.class
 edu\eci\arsw\model\Task.class
@@ -20,6 +21,7 @@ edu\eci\arsw\persistence\impl\ImplUserPersistence.class
 edu\eci\arsw\controllers\TaskAPIController.class
 edu\eci\arsw\SaokoAPIApplication.class
 edu\eci\arsw\service\TaskService.class
+edu\eci\arsw\error\ExceptionLoginEmailPassword.class
 edu\eci\arsw\persistence\UserPersistence.class
 edu\eci\arsw\service\impl\ImplTaskService.class
 edu\eci\arsw\controllers\ChatAPIController.class
