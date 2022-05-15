@@ -11,6 +11,7 @@ edu\eci\arsw\model\Chat.class
 edu\eci\arsw\service\ChatService.class
 edu\eci\arsw\persistence\impl\ImplRoomPersistence.class
 edu\eci\arsw\service\impl\ImplRoomService.class
+edu\eci\arsw\model\User.class
 edu\eci\arsw\controllers\RoomAPIController.class
 edu\eci\arsw\service\impl\ImplChatService.class
 edu\eci\arsw\model\Task.class
