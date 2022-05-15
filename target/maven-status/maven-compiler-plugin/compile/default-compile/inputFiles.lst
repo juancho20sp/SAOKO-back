@@ -1,4 +1,27 @@
-D:\Archivos\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Materias\2022-1\ARSW\Proyecto\SAOKO-back\src\main\java\edu\eci\arsw\conectdb\CConexion.java
-D:\Archivos\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Materias\2022-1\ARSW\Proyecto\SAOKO-back\src\main\java\edu\eci\arsw\SaokoAPIApplication.java
-D:\Archivos\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Materias\2022-1\ARSW\Proyecto\SAOKO-back\src\main\java\edu\eci\arsw\controllers\SaokoAPIController.java
-D:\Archivos\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Materias\2022-1\ARSW\Proyecto\SAOKO-back\src\main\java\edu\eci\arsw\service\SaokoService.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\persistence\UserPersistence.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\conectdb\CConexion.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\persistence\TaskPersistence.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\persistence\RoomPersistence.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\persistence\impl\ImplChatPersistence.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\persistence\impl\ImplTaskPersistence.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\service\impl\ImplUserService.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\error\ExceptionLoginEmailPassword.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\persistence\ChatPersistence.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\controllers\RoomAPIController.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\controllers\TaskAPIController.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\persistence\impl\ImplUserPersistence.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\service\impl\ImplChatService.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\model\Task.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\service\impl\ImplTaskService.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\controllers\ChatAPIController.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\model\Chat.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\SaokoAPIApplication.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\service\ChatService.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\model\User.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\service\UserService.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\model\Room.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\service\impl\ImplRoomService.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\controllers\UserAPIController.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\persistence\impl\ImplRoomPersistence.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\service\RoomService.java
+C:\Users\jua10\OneDrive\Escritorio\SAOKO-back\src\main\java\edu\eci\arsw\service\TaskService.java

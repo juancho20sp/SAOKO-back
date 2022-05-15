@@ -5,23 +5,29 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    private Long cell;
     private String role;
+    private String password;
 
     public User(){}
 
-    public User(Integer userId, String firstName, String lastName, String email, String role) {
+    public User(Integer userId, String firstName, String lastName, String email, Long cell , String role, String password) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.cell = cell;
         this.role = role;
+        this.password = password;
     }
 
-    public User(String firstName, String lastName, String email, String role) {
+    public User(String firstName, String lastName, String email, Long cell, String role, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.cell = cell;
         this.role = role;
+        this.password = password;
     }
 
     public Integer getUserId() {
@@ -62,5 +68,21 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public Long getCell() {
+        return cell;
+    }
+
+    public void setCell(Long cell) {
+        this.cell = cell;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
