@@ -31,3 +31,15 @@ También podemos ver la pestaña donde gestionaremos el tema de creación de usu
 https://tree.taiga.io/project/juancho20sp-sauco/backlog
 
 ## Atributos de calidad
+
+### Disponibilidad
+
+Para el atributo de disponibilidad se usara un load balancer que distribuye la carga entre dos nodos idénticos, esta configuracion se realizara en la plataforma de Azure la cual nos garantiza una disponibilidad cercana del 99,995%.
+
+### Mantenibilidad
+
+Para el atributo de mantenibilidad se implementó un flujo mediante Github Actions con análisis estático de código usando Sonar Qube para garantisar que el codigo cumpla con estandares.
+
+### Seguridad
+
+Para el atributo de seguridad del código se utilizó una herramienta externa de AWS llamada AWS Cognito, quien se encarga del registro, autenticación y autorización de los usuarios
