@@ -36,9 +36,21 @@ https://tree.taiga.io/project/juancho20sp-sauco/backlog
 
 Para el atributo de disponibilidad se usara un load balancer que distribuye la carga entre dos nodos idénticos, esta configuracion se realizara en la plataforma de Azure la cual nos garantiza una disponibilidad cercana del 99,995%.
 
+Fuente: Usuario	
+Estimulo: El usuario envía un mensaje 
+Entorno: Ejecución mientras se mantiene abajo uno de los nodos
+Respuesta: El mensaje es enviado 
+Métrica: 99,9% de las peticiones son atendidas satisfactoriamente por el sistema
+
 ### Mantenibilidad
 
 Para el atributo de mantenibilidad se implementó un flujo mediante Github Actions con análisis estático de código usando Sonar Qube para garantisar que el codigo cumpla con estandares.
+
+Fuente: Desarrollador 
+Estimulo: Agregar un nuevo servicio a la aplicación 
+Entorno: Tiempo de diseño 
+Respuesta: Cambio hecho y aprobado 
+Métrica: Dos semanas de trabajo
 
 ### Seguridad
 
