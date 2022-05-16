@@ -8,7 +8,9 @@ Juan David Murillo Giraldo
 
 Juan Sebastian Cadavid Peralta
 
-**Resumen** – Como seres humanos tendemos a olvidar cosas, la idea de este es que podamos tener anotadas las tareas y poder gestionar de mejor manera nuestro tiempo, para ser los más productivos posibles en el ámbito laboral como en el personal.
+## Resumen 
+
+Como seres humanos tendemos a olvidar cosas, la idea de este es que podamos tener anotadas las tareas y poder gestionar de mejor manera nuestro tiempo, para ser los más productivos posibles en el ámbito laboral como en el personal.
 
 ## Problema a resolver
 
@@ -30,6 +32,10 @@ También podemos ver la pestaña donde gestionaremos el tema de creación de usu
 
 https://tree.taiga.io/project/juancho20sp-sauco/backlog
 
+
+## Restricciones 
+- La ejecución del proyecto debe hacerse en la plataforma Azure
+
 ## Atributos de calidad
 
 ### Disponibilidad
@@ -37,9 +43,13 @@ https://tree.taiga.io/project/juancho20sp-sauco/backlog
 Para el atributo de disponibilidad se usara un load balancer que distribuye la carga entre dos nodos idénticos, esta configuracion se realizara en la plataforma de Azure la cual nos garantiza una disponibilidad cercana del 99,995%.
 
 Fuente: Usuario	
+
 Estimulo: El usuario envía un mensaje 
+
 Entorno: Ejecución mientras se mantiene abajo uno de los nodos
+
 Respuesta: El mensaje es enviado 
+
 Métrica: 99,9% de las peticiones son atendidas satisfactoriamente por el sistema
 
 ### Mantenibilidad
@@ -47,11 +57,25 @@ Métrica: 99,9% de las peticiones son atendidas satisfactoriamente por el sistem
 Para el atributo de mantenibilidad se implementó un flujo mediante Github Actions con análisis estático de código usando Sonar Qube para garantisar que el codigo cumpla con estandares.
 
 Fuente: Desarrollador 
+
 Estimulo: Agregar un nuevo servicio a la aplicación 
+
 Entorno: Tiempo de diseño 
+
 Respuesta: Cambio hecho y aprobado 
+
 Métrica: Dos semanas de trabajo
 
 ### Seguridad
 
-Para el atributo de seguridad del código se utilizó una herramienta externa de AWS llamada AWS Cognito, quien se encarga del registro, autenticación y autorización de los usuarios
+Para el atributo de seguridad del código se utilizó una herramienta externa de AWS llamada AWS Cognito, quien se encarga del registro, autenticación y autorización de los usuarios. 
+
+Fuente: Usuario
+
+Estimulo: Inicio de sesión
+
+Entorno: Estado normal de ejecución en donde todos los servicios están arriba
+
+Respuesta: Si las credenciales son válidas, pasa a la siguiente pantalla, sino, mensaje de error
+
+Métrica de respuesta: Porcentaje de usuarios que logran iniciar sesión
